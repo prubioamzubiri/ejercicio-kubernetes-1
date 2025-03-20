@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: wordpress
+  namespace: blog-app
+  labels:
+    app: wordpress
+spec:
+  containers:
+  - name: wordpress
+    image: wordpress:5.7
+    ports:
+    - containerPort: 80
+    env:
+    - name: WORDPRESS_DB_HOST
+      valueFrom:
+        configMapKeyRef:
+          name: blog-config
+          key: WORDPRESS_DB_HOST
+    - name: WORDPRESS_DB_USER
+      valueFrom:
+        secretKeyRef:
+          name: blog-secrets
+          key: WORDPRESS_DB_USER
+    - name: WORDPRESS_DB_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          name: blog-secrets
+          key: WORDPRESS_DB_PASSWORD
+    - name: WORDPRESS_DB_NAME
+      valueFrom:
+        configMapKeyRef:
+          name: blog-config
+          key: MYSQL_DATABASE

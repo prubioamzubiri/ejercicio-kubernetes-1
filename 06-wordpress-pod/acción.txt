@@ -1,0 +1,1 @@
+Crear pod de wordpress teniendo en cuenta que se tiene que conectar al pod de la base de datos
