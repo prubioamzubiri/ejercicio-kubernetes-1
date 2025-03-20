@@ -1,0 +1,1 @@
+Se crea secrets y config y se modifica pod para consumir estos.
