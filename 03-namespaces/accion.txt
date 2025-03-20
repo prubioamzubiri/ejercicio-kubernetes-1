@@ -1,0 +1,1 @@
+Se crea namespace y se modifican todos los metadata
