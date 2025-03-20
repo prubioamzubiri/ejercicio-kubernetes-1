@@ -1,0 +1,1 @@
+Se crea un volumen persistente y se le añade al pod y contenedor del pod
